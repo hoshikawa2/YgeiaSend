@@ -13,6 +13,9 @@
 		6B2102B623720E9A0004C444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2102B423720E9A0004C444 /* Main.storyboard */; };
 		6B2102B823720E9B0004C444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2102B723720E9B0004C444 /* Assets.xcassets */; };
 		6B2102BB23720E9B0004C444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2102B923720E9B0004C444 /* LaunchScreen.storyboard */; };
+		6B2102C3237210DA0004C444 /* running.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B2102C2237210DA0004C444 /* running.jpg */; };
+		6B2102C62372170D0004C444 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2102C52372170D0004C444 /* HealthKit.framework */; };
+		6B2102CD23721FE90004C444 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2102C82372178D0004C444 /* PushKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		6B2102B723720E9B0004C444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B2102BA23720E9B0004C444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B2102BC23720E9B0004C444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B2102C2237210DA0004C444 /* running.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = running.jpg; sourceTree = "<group>"; };
+		6B2102C52372170D0004C444 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6B2102C82372178D0004C444 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		6B2102CA23721EFB0004C444 /* YgeiaSend.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YgeiaSend.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2102C62372170D0004C444 /* HealthKit.framework in Frameworks */,
+				6B2102CD23721FE90004C444 /* PushKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +49,10 @@
 		6B2102A223720E9A0004C444 = {
 			isa = PBXGroup;
 			children = (
+				6B2102C2237210DA0004C444 /* running.jpg */,
 				6B2102AD23720E9A0004C444 /* YgeiaSend */,
 				6B2102AC23720E9A0004C444 /* Products */,
+				6B2102C42372170C0004C444 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +67,7 @@
 		6B2102AD23720E9A0004C444 /* YgeiaSend */ = {
 			isa = PBXGroup;
 			children = (
+				6B2102CA23721EFB0004C444 /* YgeiaSend.entitlements */,
 				6B2102AE23720E9A0004C444 /* AppDelegate.swift */,
 				6B2102B023720E9A0004C444 /* SceneDelegate.swift */,
 				6B2102B223720E9A0004C444 /* ViewController.swift */,
@@ -65,6 +77,15 @@
 				6B2102BC23720E9B0004C444 /* Info.plist */,
 			);
 			path = YgeiaSend;
+			sourceTree = "<group>";
+		};
+		6B2102C42372170C0004C444 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B2102C82372178D0004C444 /* PushKit.framework */,
+				6B2102C52372170D0004C444 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +149,7 @@
 				6B2102BB23720E9B0004C444 /* LaunchScreen.storyboard in Resources */,
 				6B2102B823720E9B0004C444 /* Assets.xcassets in Resources */,
 				6B2102B623720E9A0004C444 /* Main.storyboard in Resources */,
+				6B2102C3237210DA0004C444 /* running.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +306,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YgeiaSend/YgeiaSend.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RX2ZPRMCN2;
 				INFOPLIST_FILE = YgeiaSend/Info.plist;
@@ -293,8 +317,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoshikawa.health.YgeiaSend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,6 +327,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YgeiaSend/YgeiaSend.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RX2ZPRMCN2;
 				INFOPLIST_FILE = YgeiaSend/Info.plist;
@@ -311,8 +338,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoshikawa.health.YgeiaSend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
